@@ -26,10 +26,22 @@ extension SKNode {
 }
 
 class GameViewController: UIViewController {
-
+    
+    var flower: SKSpriteNode!
+    var scene2: GameScene!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        startGame()
+        
+        
+    }
+    
+    @IBAction func resetBtn(sender: AnyObject) {
+        startGame()
+    }
+    
+    func startGame(){
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             // Configure the view.
             let skView = self.view as SKView
@@ -41,8 +53,27 @@ class GameViewController: UIViewController {
             
             /* Set the scale mode to scale to fit the window */
             scene.scaleMode = .AspectFill
+            scene2 = scene
             
             skView.presentScene(scene)
+            
+            skView.becomeFirstResponder()
+        }
+
+    }
+    
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
+        if motion == .MotionShake {
+            println("Shake")
+            scene2.flower.texture = SKTexture(imageNamed: Flower2TextureImage)
+            scene2.flower.setScale(0.25)
+            
+            
+            scene2.fallingLeaves()
         }
     }
 
