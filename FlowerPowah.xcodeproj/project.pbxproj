@@ -15,8 +15,6 @@
 		2B4544101A350D7100CF8B56 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B45440F1A350D7100CF8B56 /* Images.xcassets */; };
 		2B4544131A350D7100CF8B56 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B4544111A350D7100CF8B56 /* LaunchScreen.xib */; };
 		2B45441F1A350D7100CF8B56 /* FlowerPowahTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B45441E1A350D7100CF8B56 /* FlowerPowahTests.swift */; };
-		2B45442A1A350DAD00CF8B56 /* Green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B4544281A350DAD00CF8B56 /* Green@2x.png */; };
-		2B45442B1A350DAD00CF8B56 /* Red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B4544291A350DAD00CF8B56 /* Red@2x.png */; };
 		2B45442D1A35365200CF8B56 /* StemNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B45442C1A35365200CF8B56 /* StemNode.swift */; };
 		2B45442F1A35379100CF8B56 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B45442E1A35379100CF8B56 /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -44,8 +42,6 @@
 		2B4544181A350D7100CF8B56 /* FlowerPowahTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowerPowahTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B45441D1A350D7100CF8B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B45441E1A350D7100CF8B56 /* FlowerPowahTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerPowahTests.swift; sourceTree = "<group>"; };
-		2B4544281A350DAD00CF8B56 /* Green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green@2x.png"; sourceTree = "<group>"; };
-		2B4544291A350DAD00CF8B56 /* Red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red@2x.png"; sourceTree = "<group>"; };
 		2B45442C1A35365200CF8B56 /* StemNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StemNode.swift; sourceTree = "<group>"; };
 		2B45442E1A35379100CF8B56 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,8 +92,6 @@
 				2B45440C1A350D7100CF8B56 /* Main.storyboard */,
 				2B45440F1A350D7100CF8B56 /* Images.xcassets */,
 				2B4544111A350D7100CF8B56 /* LaunchScreen.xib */,
-				2B4544281A350DAD00CF8B56 /* Green@2x.png */,
-				2B4544291A350DAD00CF8B56 /* Red@2x.png */,
 				2B4544021A350D7100CF8B56 /* Supporting Files */,
 				2B45442C1A35365200CF8B56 /* StemNode.swift */,
 				2B45442E1A35379100CF8B56 /* Constants.swift */,
@@ -210,11 +204,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B45442A1A350DAD00CF8B56 /* Green@2x.png in Resources */,
 				2B4544131A350D7100CF8B56 /* LaunchScreen.xib in Resources */,
 				2B4544101A350D7100CF8B56 /* Images.xcassets in Resources */,
 				2B4544071A350D7100CF8B56 /* GameScene.sks in Resources */,
-				2B45442B1A350DAD00CF8B56 /* Red@2x.png in Resources */,
 				2B45440E1A350D7100CF8B56 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,6 +18,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var leaves: [SKSpriteNode]! = []
     
     var offsets: [Int]! = []
+    var hasLeaves: Bool! = true
 
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -32,7 +33,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         setUpPhysics()
         setUpBackground()
         
+        
         setUpFlower()
+        setUpLeaves()
+        
+        
         setUpStem()
     }
 
@@ -41,12 +46,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.speed = 1.0
     }
     
-    func fallingLeaves(){
-        
-        
+    private func setUpLeaves(){
         for var i = 0; i < 5; ++i{
             var leaf = SKSpriteNode(imageNamed: LeafTextureImage)
-            leaf.position = CGPointMake(CGRectGetMidX(flower.frame) , CGRectGetMidY(flower.frame))
+            
             leaf.zPosition = Layer.Leaf
             leaf.setScale(0.5)
             
@@ -57,18 +60,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             leaf.physicsBody?.collisionBitMask = 0
             leaf.physicsBody?.contactTestBitMask = Category.Stem
             
+            leaf.hidden = true
+            
             addChild(leaf)
             leaves.append(leaf)
         }
         
-        for var i = 0; i < leaves.count; ++i{
-            var offset = i * 100
-            offsets.append(offset)
-            fallingLeaf(i)
+        hasLeaves = true
+
+    }
+    
+    func fallingLeaves(){
+        if hasLeaves.boolValue{
+            for var i = 0; i < leaves.count; ++i{
+                var offset = i * 100
+                offsets.append(offset)
+                fallingLeaf(i)
+            }
+            hasLeaves = false
         }
     }
     
     private func fallingLeaf(i: Int){
+        leaves[i].hidden = false
+        leaves[i].position = CGPointMake(CGRectGetMidX(flower.frame) , CGRectGetMidY(flower.frame))
+        
         var fallingLeafAction = SKAction.moveTo(CGPoint(x: 300 + offsets[i], y: 100), duration: 2.0)
         leaves[i].runAction(fallingLeafAction, completion: {
             self.leaves[i].removeFromParent()
