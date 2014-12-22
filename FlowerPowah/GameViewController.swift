@@ -33,8 +33,6 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startGame()
-        
-        
     }
     
     @IBAction func resetBtn(sender: AnyObject) {
@@ -65,17 +63,18 @@ class GameViewController: UIViewController {
     override func canBecomeFirstResponder() -> Bool {
         return true
     }
-    
+   
+    /*
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
         if motion == .MotionShake {
             println("Shake")
             scene2.flower.texture = SKTexture(imageNamed: Flower2TextureImage)
             scene2.flower.setScale(0.25)
             
-            
             scene2.fallingLeaves()
         }
     }
+*/
 
     override func shouldAutorotate() -> Bool {
         return true

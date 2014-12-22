@@ -17,6 +17,8 @@
 		2B45441F1A350D7100CF8B56 /* FlowerPowahTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B45441E1A350D7100CF8B56 /* FlowerPowahTests.swift */; };
 		2B45442D1A35365200CF8B56 /* StemNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B45442C1A35365200CF8B56 /* StemNode.swift */; };
 		2B45442F1A35379100CF8B56 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B45442E1A35379100CF8B56 /* Constants.swift */; };
+		2BEB8AB01A4861F7007BD889 /* ShakeMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEB8AAF1A4861F7007BD889 /* ShakeMotion.swift */; };
+		2BEB8AB21A486266007BD889 /* Kladd in Resources */ = {isa = PBXBuildFile; fileRef = 2BEB8AB11A486266007BD889 /* Kladd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		2B45441E1A350D7100CF8B56 /* FlowerPowahTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerPowahTests.swift; sourceTree = "<group>"; };
 		2B45442C1A35365200CF8B56 /* StemNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StemNode.swift; sourceTree = "<group>"; };
 		2B45442E1A35379100CF8B56 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2BEB8AAF1A4861F7007BD889 /* ShakeMotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeMotion.swift; sourceTree = "<group>"; };
+		2BEB8AB11A486266007BD889 /* Kladd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Kladd; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 				2B4544021A350D7100CF8B56 /* Supporting Files */,
 				2B45442C1A35365200CF8B56 /* StemNode.swift */,
 				2B45442E1A35379100CF8B56 /* Constants.swift */,
+				2BEB8AAF1A4861F7007BD889 /* ShakeMotion.swift */,
+				2BEB8AB11A486266007BD889 /* Kladd */,
 			);
 			path = FlowerPowah;
 			sourceTree = "<group>";
@@ -205,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B4544131A350D7100CF8B56 /* LaunchScreen.xib in Resources */,
+				2BEB8AB21A486266007BD889 /* Kladd in Resources */,
 				2B4544101A350D7100CF8B56 /* Images.xcassets in Resources */,
 				2B4544071A350D7100CF8B56 /* GameScene.sks in Resources */,
 				2B45440E1A350D7100CF8B56 /* Main.storyboard in Resources */,
@@ -227,6 +234,7 @@
 			files = (
 				2B45442F1A35379100CF8B56 /* Constants.swift in Sources */,
 				2B45442D1A35365200CF8B56 /* StemNode.swift in Sources */,
+				2BEB8AB01A4861F7007BD889 /* ShakeMotion.swift in Sources */,
 				2B4544091A350D7100CF8B56 /* GameScene.swift in Sources */,
 				2B45440B1A350D7100CF8B56 /* GameViewController.swift in Sources */,
 				2B4544051A350D7100CF8B56 /* AppDelegate.swift in Sources */,
@@ -421,6 +429,7 @@
 				2B4544241A350D7100CF8B56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B4544251A350D7100CF8B56 /* Build configuration list for PBXNativeTarget "FlowerPowahTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +438,7 @@
 				2B4544271A350D7100CF8B56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -20,11 +20,55 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var offsets: [Int]! = []
     var hasLeaves: Bool! = true
 
+    
+    // Shake
+    var lastX: Double = 0.0;
+    var lastY: Double = 0.0;
+    var lastZ: Double = 0.0;
+    
+    var values:[Double] = [];
+
+    
+    func shakeFound() {
+        println("Shake shake")
+    }
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-    
+        
         if manager.accelerometerAvailable{
-           
+           manager.accelerometerUpdateInterval = 1/10
+            manager.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler:
+                {(data: CMAccelerometerData!, error: NSError!) in
+                
+                    var value = abs(data.acceleration.x + data.acceleration.y + data.acceleration.z - self.lastX - self.lastY - self.lastZ)
+                    
+                    self.values.append(value)
+                    
+                    if( self.values.count >= 20){
+                        self.values.removeAtIndex(0)
+                    }
+                    
+                    var sum = self.values.reduce(0, combine: +)
+        
+                    //println("Sum is \(sum)");
+                    
+                    if(sum/20 > Double(3.5)){
+                        dispatch_async(dispatch_get_main_queue(), {
+                            self.flower.texture = SKTexture(imageNamed: Flower2TextureImage)
+                            self.flower.setScale(0.25)
+                            self.fallingLeaves()
+                        });
+                        
+                        sum = 0;
+                        self.values.removeAll(keepCapacity: true);
+                    }
+                    
+                    self.lastX = data.acceleration.x;
+                    self.lastY = data.acceleration.y;
+                    self.lastZ = data.acceleration.z;
+            })
+            
             manager.startDeviceMotionUpdatesToQueue(motionQueue, withHandler: gravityUpdated)
         } else {
             println("Accelerometer is not available")
@@ -33,14 +77,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         setUpPhysics()
         setUpBackground()
         
-        
         setUpFlower()
         setUpLeaves()
         
-        
         setUpStem()
     }
-
+    
     private func setUpPhysics() {
         physicsWorld.gravity = CGVectorMake(0.0, 9.8)
         physicsWorld.speed = 1.0
@@ -153,6 +195,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
 
     func gravityUpdated(motion: CMDeviceMotion!, error: NSError!){
+        
         let grav: CMAcceleration = motion.gravity
         
         let x = CGFloat(grav.x)
